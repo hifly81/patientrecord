@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_uSb-oAhwEei2LKAhfXI_QQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" exporter="jBPM Designer" exporterVersion="6.2.0" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.omg.org/bpmn20" typeLanguage="http://www.java.com/javaTypes">
+  <bpmn2:process id="patientrecord.PatientDischarge" drools:packageName="com.redhat.patientrecord" drools:version="1.0" name="Patient Discharge" isExecutable="true">
+    <bpmn2:startEvent id="processStartEvent" drools:selectable="true" color:background-color="#9acd32" color:border-color="#000000" color:color="#000000" name="">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>_DE9D8A19-4015-4402-B333-B0B1961F91C3</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:scriptTask id="_13E9D6D2-6F12-4B3C-B05C-A4FCB213C847" drools:selectable="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="Patient Discharge" scriptFormat="http://www.java.com/java">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Patient Discharge]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_DE9D8A19-4015-4402-B333-B0B1961F91C3</bpmn2:incoming>
+      <bpmn2:outgoing>_5D1DF7E3-CDE9-4F1D-A221-14E267A846C8</bpmn2:outgoing>
+    </bpmn2:scriptTask>
+    <bpmn2:sequenceFlow id="_DE9D8A19-4015-4402-B333-B0B1961F91C3" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="processStartEvent" targetRef="_13E9D6D2-6F12-4B3C-B05C-A4FCB213C847"/>
+    <bpmn2:endEvent id="_6522F167-5720-4323-A6AC-64AF354667DD" drools:selectable="true" color:background-color="#ff6347" color:border-color="#000000" color:color="#000000" name="">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_5D1DF7E3-CDE9-4F1D-A221-14E267A846C8</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="_5D1DF7E3-CDE9-4F1D-A221-14E267A846C8" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="_13E9D6D2-6F12-4B3C-B05C-A4FCB213C847" targetRef="_6522F167-5720-4323-A6AC-64AF354667DD"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_uSb-oQhwEei2LKAhfXI_QQ">
+    <bpmndi:BPMNPlane id="_uSb-oghwEei2LKAhfXI_QQ" bpmnElement="patientrecord.PatientDischarge">
+      <bpmndi:BPMNShape id="_uSb-owhwEei2LKAhfXI_QQ" bpmnElement="processStartEvent">
+        <dc:Bounds height="30.0" width="30.0" x="120.0" y="165.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_uSb-pAhwEei2LKAhfXI_QQ" bpmnElement="_13E9D6D2-6F12-4B3C-B05C-A4FCB213C847">
+        <dc:Bounds height="80.0" width="100.0" x="255.0" y="140.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_uSb-pQhwEei2LKAhfXI_QQ" bpmnElement="_6522F167-5720-4323-A6AC-64AF354667DD">
+        <dc:Bounds height="28.0" width="28.0" x="435.0" y="166.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="_uSb-pghwEei2LKAhfXI_QQ" bpmnElement="_DE9D8A19-4015-4402-B333-B0B1961F91C3" sourceElement="_uSb-owhwEei2LKAhfXI_QQ" targetElement="_uSb-pAhwEei2LKAhfXI_QQ">
+        <di:waypoint xsi:type="dc:Point" x="135.0" y="180.0"/>
+        <di:waypoint xsi:type="dc:Point" x="305.0" y="180.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_uSb-pwhwEei2LKAhfXI_QQ" bpmnElement="_5D1DF7E3-CDE9-4F1D-A221-14E267A846C8" sourceElement="_uSb-pAhwEei2LKAhfXI_QQ" targetElement="_uSb-pQhwEei2LKAhfXI_QQ">
+        <di:waypoint xsi:type="dc:Point" x="305.0" y="180.0"/>
+        <di:waypoint xsi:type="dc:Point" x="449.0" y="180.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship id="_uSb-qAhwEei2LKAhfXI_QQ" type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters" baseTimeUnit="min"/>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_DE9D8A19-4015-4402-B333-B0B1961F91C3" id="_uSb-qQhwEei2LKAhfXI_QQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_13E9D6D2-6F12-4B3C-B05C-A4FCB213C847" id="_uSb-qghwEei2LKAhfXI_QQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_6522F167-5720-4323-A6AC-64AF354667DD" id="_uSb-qwhwEei2LKAhfXI_QQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_5D1DF7E3-CDE9-4F1D-A221-14E267A846C8" id="_uSb-rAhwEei2LKAhfXI_QQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="processStartEvent" id="_uSb-rQhwEei2LKAhfXI_QQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_uSb-oAhwEei2LKAhfXI_QQ</bpmn2:source>
+    <bpmn2:target>_uSb-oAhwEei2LKAhfXI_QQ</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>
