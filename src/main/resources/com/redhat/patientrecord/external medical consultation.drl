@@ -1,0 +1,28 @@
+package com.redhat.patientrecord;
+
+import org.jbpm.casemgmt.api.model.instance.CaseFileInstance;
+import org.jbpm.casemgmt.api.CaseService;
+import org.jbpm.services.api.service.ServiceRegistry;
+import org.kie.api.runtime.process.WorkflowProcessInstance;
+import java.util.Map;
+import java.util.HashMap;
+
+rule "external medical consultation"
+    ruleflow-group 'externalMedicalConsultation'
+
+when 
+    $caseData : CaseFileInstance()
+    Boolean(this == true) from $caseData.getData("externalConsultation")
+    $process : WorkflowProcessInstance( )        
+then 
+    $caseData.remove("externalConsultation");
+    CaseService caseService = (CaseService) ServiceRegistry.get().service(ServiceRegistry.CASE_SERVICE);
+    WorkflowProcessInstance $p = (WorkflowProcessInstance)kcontext.getKieRuntime().getProcessInstance($process.getId()); 
+    Map<String, Object> parameters = new HashMap<>();
+    parameters.put("doctorCheckup", $p.getVariable( "doctorCheckup"));
+    caseService.addDynamicTask($caseData.getCaseId(), caseService.newHumanTaskSpec("TaskMedicalExternal", "Medical external consultation", null, "ExternalMedicalUnit", parameters));
+    System.out.println("External consultation rule fired!");
+    
+end
+
+
