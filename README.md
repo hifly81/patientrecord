@@ -13,3 +13,5 @@ A case project with human tasks and different milestones. <br>It shows:
  - Sub cases
  - BPMN Human tasks
  - BPMN signals and sub processes
+
+![alt text](https://github.com/hifly81/patientrecord/blob/master/src/main/resources/com/redhat/patientrecord/patientrecord.patientrecord-svg.svg)
